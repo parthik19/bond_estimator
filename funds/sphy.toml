@@ -1,0 +1,32 @@
+# SPDR Portfolio High Yield Bond ETF (SPHY).
+# Check every number against the fund page before relying on it:
+# https://www.ssga.com/us/en/individual/etfs/state-street-spdr-portfolio-high-yield-bond-etf-sphy
+#
+# All rates are decimals: 0.0732 means 7.32%.
+
+[fund]
+name = "SPDR Portfolio High Yield Bond ETF (SPHY)"
+as_of = 2026-09-04
+yield_to_worst = 0.0732            # fund page, index characteristics, 2026-09-04
+option_adjusted_duration = 2.94    # fund page, 2026-09-04
+expense_ratio = 0.0005             # 0.05%
+# How much the fund lags its index beyond the expense ratio, per year. Not published as such:
+# from the fund page's performance table, take (index return − NAV return) − expense ratio
+# over the longest period shown. Placeholder until you fill it in.
+tracking_drag = 0.0
+
+# One row per case: your assumption for the AVERAGE yearly default rate and recovery rate over
+# the next ~5 years. Use a par-weighted high-yield BOND default series (e.g. J.P. Morgan's),
+# not Moody's issuer-weighted speculative-grade rate, which covers a different universe.
+
+[cases.benign]
+default_rate = 0.015
+recovery_rate = 0.40
+
+[cases.long_run_average]
+default_rate = 0.034               # J.P. Morgan 25-year average, US high-yield bonds
+recovery_rate = 0.40               # long-run senior unsecured bond average (~40%)
+
+[cases.recession_heavy]
+default_rate = 0.06
+recovery_rate = 0.30

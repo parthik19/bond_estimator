@@ -1,0 +1,2 @@
+# Python 3.11+ (uses the standard library's tomllib).
+pytest>=8.0

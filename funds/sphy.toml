@@ -12,7 +12,8 @@ option_adjusted_duration = 2.94    # fund page, 2026-09-04
 expense_ratio = 0.0005             # 0.05%
 # How much the fund lags its index beyond the expense ratio, per year. Not published as such:
 # from the fund page's performance table, take (index return − NAV return) − expense ratio
-# over the longest period shown. Placeholder until you fill it in.
+# over the longest period shown. Unknown for SPHY, so left at 0, which makes the estimate
+# slightly optimistic.
 tracking_drag = 0.0
 
 # One row per case: your assumption for the AVERAGE yearly default rate and recovery rate over
